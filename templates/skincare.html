@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<title>Skincare</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='main.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="static/js/main.js"></script>
+<html lang="en">
+	<body>
+		<h3>Select your skin type:</h3>
+		<div class="btn-group1" style="text-align:center">
+			<button id='btn1-1' value='normal'>Normal</button>
+ 			<button id='btn1-2' value='dry'>Dry</button>
+			<button id='btn1-3' value='oily'>Oily</button>
+			<button id='btn1-4' value='combination'>Combination</button>
+		</div>
+		<br>
+		<h3>Select your skin tone:</h3>
+		<div class="btn-group2" style="text-align:center">
+			<button id='btn2-1' value='light'>Light</button>
+			<button id='btn2-2' value='medium'>Medium</button>
+	 		<button id='btn2-3' value='tan'>Tan</button>
+			<button id='btn2-4' value='olive'>Olive</button>
+			<button id='btn2-5' value='deep'>Deep</button>
+			<button id='btn2-6' value='fair'>Fair</button>
+			<button id='btn2-7' value='porcelain'>Porcelain</button>
+			<button id='btn2-8' value='dark'>Dark</button>
+			<button id='btn2-9' value='ebony'>Ebony</button>
+		</div>
+		<h3></h3>
+		<div class="btn-submit" style="text-align:center">
+			<form action="/results" method="post">
+				<input type = "hidden" id='filter1' name="skintype" value='%'>
+				<input type = "hidden" id='filter2', name="skintone" value='%'>
+				<input type = "hidden" name="pagename" value="Skincare">
+				<button id='btn-submit' type="submit")'>Submit</button>
+			</form>
+		</div>
+	</body>
+</html>

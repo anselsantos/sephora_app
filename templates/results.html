@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<title>{{title}}</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='main.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="static/js/main.js"></script>
+<html lang="en">
+	<body>
+		<table>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td style="font-weight: 400">BRAND</td>
+				<td style="font-weight: 400">PRODUCT</td>
+				<td style="font-weight: 400">CATEGORY</td>
+				<td style="text-align: center; font-weight: 400">RATING</td>
+				<td style="text-align: center; font-weight: 400">REVIEWS</td>
+				<td style="text-align: center; font-weight: 400">PRICE</td>
+			</tr>
+			{% for row in rows %}
+		    <tr>
+		        <td>{{ row[0] }}</td>
+		        <td>{{ row[1] }}</td>
+		        <td>{{ row[2] }}</td>
+		        <td style="text-align: center;">{{ row[3] }}</td>
+		        <td style="text-align: center;">{{ row[4] }}</td>
+		        <td style="text-align: center;">{{ row[5] }}</td>
+		    </tr>
+		    {% endfor %}
+		</table>
+	</body>
+</html>
