@@ -5,8 +5,21 @@
 <script src="static/js/main.js"></script>
 <html lang="en">
 	<body>
+	     <tr>
+  	<th colspan="2">
+
 		<table>
+		    <tr align="center"><th colspan="8" align="center">
+                <div class="btn-plot" style="text-align:center" align="center">
+            	    <form action="/viewplot" method="post">
+            			<button id='btn-plot' type="submit">View Plot</button>
+            		</form>
+            	</div>
+    		</th></tr>
 			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -15,21 +28,27 @@
 				<td></td>
 			</tr>
 			<tr>
+				<td></td>
 				<td style="font-weight: 400">BRAND</td>
 				<td style="font-weight: 400">PRODUCT</td>
 				<td style="font-weight: 400">CATEGORY</td>
-				<td style="text-align: center; font-weight: 400">RATING</td>
+				<td style="text-align: center; font-weight: 400">ALL RATING</td>
+				<td style="text-align: center; font-weight: 400">FILTERED RATING</td>
 				<td style="text-align: center; font-weight: 400">REVIEWS</td>
 				<td style="text-align: center; font-weight: 400">PRICE</td>
+				<td></td>
 			</tr>
 			{% for row in rows %}
 		    <tr>
+		        <td></td>
 		        <td>{{ row[0] }}</td>
 		        <td>{{ row[1] }}</td>
 		        <td>{{ row[2] }}</td>
 		        <td style="text-align: center;">{{ row[3] }}</td>
 		        <td style="text-align: center;">{{ row[4] }}</td>
 		        <td style="text-align: center;">{{ row[5] }}</td>
+		        <td style="text-align: center;">{{ row[6] }}</td>
+		        <td></td>
 		    </tr>
 		    {% endfor %}
 		</table>
