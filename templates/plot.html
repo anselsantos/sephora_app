@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='main.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="static/js/main.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{{title}}</title>
+    <h3 style="font-size: 16px !important;">{{plottitle}}</h3>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/histogram-bellcurve.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var chartitle = {
+                text: ''
+            }
+            var chartlegend = {
+                enabled: false
+            }
+            var chartxaxis = [{
+                title: { text: '# of Reviews' },
+                alignTicks: false, visible: false,
+            }, {
+                title: { text: '# of Stars Given' },
+                alignTicks: false,
+                opposite: false
+            }]
+            var chartyaxis = [{
+                title: { text: '# of Stars Given' },
+                max: 6.15, min: 0
+            }, {
+                title: { text: '# of Reviews' },
+                opposite: true
+            }]
+            $('#container').highcharts({
+                title: chartitle,
+                legend:chartlegend,
+                xAxis: chartxaxis,
+                yAxis:chartyaxis,
+                series: {{chartseries|safe}}
+            });
+            $('#container2').highcharts({
+                title: chartitle,
+                legend:chartlegend,
+                xAxis: chartxaxis,
+                yAxis:chartyaxis,
+                series: {{chartseries2|safe}}
+            });
+            $('#container3').highcharts({
+                title: chartitle,
+                legend:chartlegend,
+                xAxis: chartxaxis,
+                yAxis:chartyaxis,
+                series: {{chartseries3|safe}}
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3 style="font-size: 14px !important;">{{categories[0]}}</h3>
+    <div id="container" style="height: 400px; margin: auto; min-width: 310px; max-width: 700px"></div>
+    <br>
+    <h3 style="font-size: 14px !important;">{{categories[1]}}</h3>
+    <div id="container2" style="height: 400px; margin: auto; min-width: 310px; max-width: 700px"></div>
+    <br>
+    <h3 style="font-size: 14px !important;">{{categories[2]}}</h3>
+    <div id="container3" style="height: 400px; margin: auto; min-width: 310px; max-width: 700px"></div>
+    <h3></h3>
+</body>
+</html>
